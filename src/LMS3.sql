@@ -51,25 +51,61 @@ insert into cars (brand, model, year_of_issue, price, color)
 values ('Nissan', 'Maxima', 2008, 5930.37, 'Pink');
 insert into cars (brand, model, year_of_issue, price, color)
 values ('Cadillac', 'Seville', 1992, 95674.99, 'Purple');
-select * from cars;
+select *
+from cars;
 
-select brand, model, price from cars;
-select count(*)from cars;
-select * from cars where brand = 'Mazda';
-select * from cars where color in ( 'Yellow' , 'Blue');
-select * from cars where year_of_issue > 2000 and  year_of_issue < 2010;
-select count(*) from cars where brand = 'Chevrolet' ;
-select avg(year_of_issue) from cars;
-select * from cars where brand in ('Audi' , 'Toyota ', 'Ford', 'Kia');
-select * from cars  where brand like 'T%';
-select * from cars where model ilike '%e';
-select * from cars where brand like '_____';
-select  sum(price) from cars where brand = 'Mercedes-Benz' ;
-select max(price) from cars;
-select min(price) from cars;
-select * from cars where brand <> 'Toyota';
-select * from cars order by price limit 10;
-select * from cars order by year_of_issue limit 15 offset 5;
-select * from cars where cars.year_of_issue not in (select year_of_issue from cars where year_of_issue between 1995 and 2005);
+select brand, model, price
+from cars;
+select count(*)
+from cars;
+select *
+from cars
+where brand = 'Mazda';
+select *
+from cars
+where color in ('Yellow', 'Blue');
+select *
+from cars
+where year_of_issue > 2000
+  and year_of_issue < 2010;
+select count(*)
+from cars
+where brand = 'Chevrolet';
+select avg(year_of_issue)
+from cars;
+select *
+from cars
+where brand in ('Audi', 'Toyota ', 'Ford', 'Kia');
+select *
+from cars
+where brand like 'T%';
+select *
+from cars
+where model ilike '%e';
+select *
+from cars
+where brand like '_____';
+select sum(price)
+from cars
+where brand = 'Mercedes-Benz';
+select max(price)
+from cars;
+select min(price)
+from cars;
+select *
+from cars
+where brand <> 'Toyota';
+select *
+from cars
+order by price limit 10;
+select *
+from cars
+order by year_of_issue limit 15
+offset 5;
+select *
+from cars
+where cars.year_of_issue not in (select year_of_issue from cars where year_of_issue between 1995 and 2005);
 select color, count(*) as total
-from cars group by color order by total desc limit 1;
+from cars
+group by color
+order by total desc limit 1;
